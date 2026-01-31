@@ -1,8 +1,13 @@
 from rest_framework import serializers
-from .models import Student
+from .models import College, Student
+
+class CollegeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = College
+        fields = "__all__"
+
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        # fields = ['age', 'city']
-        fields = '__all__' # to include all fields
+        fields = "__all__"
