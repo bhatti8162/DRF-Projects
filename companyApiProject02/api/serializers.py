@@ -1,7 +1,19 @@
 from rest_framework import serializers
-from .models import Student
+from .models import Employee, Department, Attendance
 
-class StudentSerializer(serializers.ModelSerializer):
+class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Student
+        model = Employee
+        fields = '__all__'
+
+
+class DepartmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Department
+        fields = '__all__'
+
+
+class AttendanceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Attendance
         fields = '__all__'
