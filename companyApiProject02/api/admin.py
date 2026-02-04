@@ -1,6 +1,5 @@
+# Firsts/admin.py
 from django.contrib import admin
-from .models import Student
+from .models import Employee
 
-@admin.register(Student)
-class StudentAdmin(admin.ModelAdmin):
-    list_display = ('id','name', 'age', 'email')
+admin.site.register(Employee)

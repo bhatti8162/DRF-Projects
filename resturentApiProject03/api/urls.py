@@ -1,25 +1,20 @@
-# from django.urls import path
-# from .views import StudentListCreateAPI, StudentRetrieveUpdateDeleteAPI
-# from .views import StudentAPI
-
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import StudentViewSet
+from .views import (
+    RestaurantViewSet,
+    MenuItemViewSet,
+    CustomerViewSet,
+    OrderViewSet,
+    TableViewSet,
+)
 
 router = DefaultRouter()
-router.register('students', StudentViewSet, basename='student')
+router.register("restaurants", RestaurantViewSet)
+router.register("menu-items", MenuItemViewSet)
+router.register("customers", CustomerViewSet)
+router.register("orders", OrderViewSet)
+router.register("tables", TableViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
 ]
-
-
-# urlpatterns = [
-#     path('students/', StudentAPI.as_view()), # For GET (all) and POST
-#     path('students/<int:pk>/', StudentAPI.as_view()), # For GET (single), PUT, DELETE
-# ]
-
-# urlpatterns = [
-#     path('student/', StudentListCreateAPI.as_view()), # For GET (all) and POST
-#     path('student/<int:pk>/', StudentRetrieveUpdateDeleteAPI.as_view()), # For GET (single), PUT, DELETE
-# ]
